@@ -13,6 +13,7 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = '/blog-placeholder-1.jpg', icon } = Astro.props;
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <!-- Global Metadata -->
@@ -20,6 +21,9 @@ const { title, description, image = '/blog-placeholder-1.jpg', icon } = Astro.pr
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href={icon} />
 <meta name="generator" content={Astro.generator} />
+
+<!-- SPA -->
+<ViewTransitions />
 
 <!-- Font preloads -->
 <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
